@@ -1,0 +1,271 @@
+@charset "UTF-8";
+/* すべてのwebページに適用される */
+
+/*
+* {
+    outline: 1px solid #ff0000;
+}
+*/
+
+html {
+    font-family: "Meiryo", sans-serif;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #eeece9;
+}
+
+.wrapper {
+    margin: 0 auto 0 auto;
+    max-width: 960px;
+}
+
+h2 {
+    color: #3f5170;
+    font-size: 22px;
+    border-bottom: 3px dotted #3f5170;
+    margin: 20px 0px;
+    padding: 5px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a:link {
+    color: #d25833;
+}
+
+a:visited {
+    color: #d25833;
+}
+
+a:hover {
+    color: #e3937a;
+}
+
+a:active {
+    color: #ff6a3b;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* すべてのページに適用 - ヘッダー - */
+
+.logo {
+    margin: 50px 0 40px 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 30px;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 20px 10px 15px 20px;
+    background-image: url(../img/menu-bg.png);
+    background-repeat: repeat-x;
+}
+
+/* ナビゲーションリンクの下線無効化 */
+
+nav a:link {
+    color: #d25833;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: #d25833;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #e3937a;
+    text-decoration: none;
+}
+
+nav a:active {
+    color: #ff6a3b;
+    text-decoration: none;
+}
+
+/* 全てのページに適用 - フッター - */
+
+.footer {
+    /* フッター画像 width: 1000px(body幅960px) height: 46px; */
+    background-image: url(../img/footer-bg.png);
+    background-repeat: no-repeat;
+    margin-top: 30px;
+    padding: 80px 15px 20px;
+    font-size: 12px;
+    color: #3f5170;
+}
+
+/* 個別のスタイル */
+
+/* index.html */
+
+/* キーヴィジュアル上部のマージン  */
+
+.key-visual {
+    margin: 15px 0 0;
+}
+
+/* ニュース欄の上下行間の字詰め */
+
+.news-item {
+    margin: 0px;
+}
+
+/* about.html */
+
+.shop-photo {
+    float: left;
+    padding: 0 1em 1em 0;
+}
+
+/* 店舗情報前でfloatの回り込み解除 */
+
+.clear {
+    clear: both;
+}
+
+/* 店舗情報のテーブル */
+
+.shop-info {
+    border-collapse: collapse;
+}
+
+.shop-info th, .shop-info td {
+    padding: 8px;
+    border: 1px solid #bec2c7;
+    text-align: left;
+}
+
+.shop-info th {
+    background: #dde2ea;
+    width: 90px;
+    color: #3f5170;
+    vertical-align: top;
+}
+
+/* menu.html */
+
+.menu-item {
+    display: flex;
+    border-bottom: 1px dashed #bec2c7;
+    padding: 20px 8px;
+}
+
+.menu-photo {
+    margin-right: 16px;
+    flex: 1 1 auto;
+}
+
+.menu-text {
+    flex: 0 0 336px;
+}
+
+/* access.html */
+
+.map {
+    text-align: center;
+}
+
+/* contact.html */
+
+form div {
+    padding: 12px;
+    border-bottom: 1px dashed #bec2c7;
+}
+
+select {
+    width: 30em;
+}
+
+input[name="subject"] {
+    width: 30em;
+}
+
+textarea {
+    width: 30em;
+    height: 6em;
+}
+
+input[type="submit"] {
+    margin: 20px 0;
+    width: 30em;
+}
+
+/* 
+スマートフォン向けCSS 
+(条件：値　条件を満たしたときに
+{カッコ内のスタイルを適用する})
+・767px以下はスマホ専用レイアウトを適用する
+・ipadの画面幅は768px以上=PC用レイアウト
+・最小スマホはiPhone SE(幅320px) 
+*/
+
+@media (max-width: 767px) {
+    /*
+     全体 - ナビゲーション - */
+    .wrapper {
+        margin: 0 8px;
+    }
+    .logo {
+        margin: 30px 0;
+    }
+    .logo img {
+        width: 200px;
+    }
+    .nav {
+        background: #dfddda;
+    }
+    .nav li {
+        display: block;
+    }
+    /*
+     menu.html - 横並び解除 */
+    .menu-item {
+        display: block;
+    }
+    .menu-photo {
+        margin-right: 0;
+        width: 100%;
+    }
+    .menu-text {
+        width: 100%;
+    }
+    /*
+     about.html - 画像のパディングを調整 */
+    .shop-photo {
+        padding-right: 0;
+    }
+    /*
+     contact.html - フォームのスマホ向け調整 */
+    select {
+        width: 100%;
+    }
+    input[name="subject"] {
+        width: 100%;
+    }
+    textarea {
+        width: 100%;
+    }
+    input[type="submit"] {
+        margin: 20px 0;
+        width: 100%;
+    }
+}
